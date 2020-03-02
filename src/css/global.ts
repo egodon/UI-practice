@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
     ${customProperties}
   } 
 
+  @font-face {
+    font-family: 'Fakt Pro';
+    src: url('/fonts/FaktPro.woff2') format('woff2');
+  }
+
   body {
     font-family: 'interUI', monospace;
     font-weight: 400;

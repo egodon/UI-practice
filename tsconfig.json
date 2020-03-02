@@ -23,7 +23,8 @@
     "hooks/*": ["./src/hooks/*"],
     "api/*": ["./src/pages/api/*"],
     "interfaces": ["./src/interfaces"],
-    "utils/*": ["./src/utils/*"]
+    "utils/*": ["./src/utils/*"],
+    "public/*": ["./public/*"]
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

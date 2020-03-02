@@ -19,7 +19,7 @@ const LaneSignup = () => {
           <H2>Lane turns any workplace into a place that works</H2>
         </LeftPanel>
         <RightPanel>
-          <h3>Please Login</h3>
+          <H3>Please Login</H3>
         </RightPanel>
       </Container>
     </>
@@ -29,6 +29,7 @@ const LaneSignup = () => {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  font-family: 'Fakt Pro';
 `;
 
 const lanePrimaryColor = '#0ad26e';
@@ -36,8 +37,8 @@ const lanePrimaryColor = '#0ad26e';
 // @todo: improve the background image gradient
 const LeftPanel = styled.div`
   background-image: linear-gradient(
-      to bottom left,
-      ${transparentize(0.85, lanePrimaryColor)},
+      to bottom right,
+      ${transparentize(0.1, lanePrimaryColor)},
       ${transparentize(0.85, lanePrimaryColor)}
     ),
     url(/images/buildings.png);
@@ -65,8 +66,8 @@ const LogoImg = styled.img`
 
 const H2 = styled.h2`
   font-size: 2.6rem;
-  max-width: 45rem;
-  line-height: 1.4;
+  max-width: 34rem;
+  line-height: 1.2;
 `;
 
 const RightPanel = styled.div`
@@ -74,6 +75,11 @@ const RightPanel = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 30% 10rem;
+`;
+
+const H3 = styled.h3`
+  font-size: 2.4rem;
+  color: var(--grey-800);
 `;
 
 export default LaneSignup;
