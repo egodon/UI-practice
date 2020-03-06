@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import styled from 'styled-components';
 import fs from 'fs';
+import path from 'path';
 
 type Props = {
   pages: string[];
@@ -26,8 +27,9 @@ IndexPage.getInitialProps = async ctx => {
   let pages = [];
 
   if (ctx.req) {
+    const pageDir = path.join(process.env.ROOT, 'src/pages');
     try {
-      const files = await fs.promises.readdir('src/pages');
+      const files = await fs.promises.readdir(pageDir);
       pages = files.filter(unwantedPages).map(removeExtension);
     } catch (error) {
       console.error(error);
