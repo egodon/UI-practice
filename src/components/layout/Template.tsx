@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { withRouter } from 'next/router';
-import styled, { ThemeProvider } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 
-const Template = ({ children, router }) => {
+const Template = ({ children }) => {
   return <AppContainer>{children}</AppContainer>;
 };
 
 const AppContainer = styled.div``;
 
-export default withRouter(Template);
+export default Template;
