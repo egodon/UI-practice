@@ -41,6 +41,7 @@ const StyledInput = styled.input`
   width: 100%;
   border-radius: 3px;
   border: 1px solid #d9d9d9;
+  background-color: var(--grey-100);
 `;
 
 const ForgotPassword = styled.div`
@@ -48,7 +49,7 @@ const ForgotPassword = styled.div`
   margin-top: 0.6rem;
 
   span {
-    color: var(--grey-500);
+    color: var(--grey-600);
     margin-right: 0.4rem;
   }
 

@@ -10,9 +10,11 @@ const Button = styled.button`
   border-radius: var(--border-radius);
   line-height: 4.2rem;
   height: 4.2rem;
-  font-size: var(--fs-base);
+  font-size: var(--fs-medium);
   letter-spacing: 1px;
+  text-transform: uppercase;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   box-shadow: 0 4px 14px 0
     ${p => transparentize(0.3, p.color ?? p.theme.__color_primary)};
 `;
