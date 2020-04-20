@@ -13,6 +13,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.2",
     "dotenv": "^8.2.0",
     "next": "^9.3.5",
     "polished": "^3.4.4",
