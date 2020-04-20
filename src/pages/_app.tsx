@@ -3,6 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider, StyleSheetManager } from 'styled-components';
 import { GlobalStyles, variables as theme } from 'css';
+import 'css/tailwind.css';
 
 export default class MyApp extends App {
   render() {
