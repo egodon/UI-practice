@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import Link from 'next/link';
 import styled from 'styled-components';
 import fs from 'fs';
@@ -14,7 +13,7 @@ const IndexPage: NextPage<Props> = ({ pages }) => {
     <Container>
       <h1>CSS Practice</h1>
 
-      {pages.map(page => (
+      {pages.map((page) => (
         <Link href={`/${page}`} key={page}>
           <a>{page}</a>
         </Link>
@@ -23,20 +22,18 @@ const IndexPage: NextPage<Props> = ({ pages }) => {
   );
 };
 
-IndexPage.getInitialProps = async ctx => {
+export const getStaticProps: GetStaticProps = async () => {
   let pages = [];
 
-  if (ctx.req) {
-    const pageDir = path.join(process.env.ROOT, 'src/pages');
-    try {
-      const files = await fs.promises.readdir(pageDir);
-      pages = files.filter(unwantedPages).map(removeExtension);
-    } catch (error) {
-      console.error(error);
-    }
+  const pageDir = path.join(process.env.ROOT, 'src/pages');
+  try {
+    const files = await fs.promises.readdir(pageDir);
+    pages = files.filter(unwantedPages).map(removeExtension);
+  } catch (error) {
+    console.error(error);
   }
 
-  return { pages };
+  return { props: { pages } };
 };
 
 const Container = styled.div`
@@ -48,12 +45,12 @@ const Container = styled.div`
   font-size: 20px;
 `;
 
-const unwantedPages = page => {
+const unwantedPages = (page) => {
   const filesToDiscard = ['_app.tsx', 'index.tsx', '_document.tsx', 'api'];
 
   return !filesToDiscard.includes(page);
 };
 
-const removeExtension = page => page.replace('.tsx', '');
+const removeExtension = (page) => page.replace('.tsx', '');
 
 export default IndexPage;

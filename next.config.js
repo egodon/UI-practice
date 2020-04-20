@@ -13,6 +13,6 @@ module.exports = withFonts({
     return config;
   },
   env: {
-    ROOT: __dirname,
+    ROOT: process.cwd(),
   },
 });
